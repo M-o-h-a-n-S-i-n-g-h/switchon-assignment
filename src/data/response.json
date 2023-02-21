@@ -1,0 +1,55 @@
+{
+  "id": "tt4154664",
+  "review_api_path": "/reviews/tt4154664",
+  "imdb": "https://www.imdb.com/title/tt4154664",
+  "contentType": "Movie",
+  "title": "Captain Marvel",
+  "image": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_.jpg",
+  "plot": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
+  "rating": {
+    "count": 568708,
+    "star": 6.8
+  },
+  "contentRating": "PG-13",
+  "genre": [
+    "Action",
+    "Adventure",
+    "Sci-Fi"
+  ],
+  "year": "2019",
+  "runtime": "2h 3m",
+  "actors": [
+    "Brie Larson",
+    "Samuel L. Jackson",
+    "Ben Mendelsohn"
+  ],
+  "directors": [
+    "Anna Boden",
+    "Ryan Fleck"
+  ],
+  "top_credits": [
+    {
+      "name": "Directors",
+      "value": [
+        "Anna Boden",
+        "Ryan Fleck"
+      ]
+    },
+    {
+      "name": "Writers",
+      "value": [
+        "Anna Boden(screenplay by)",
+        "Ryan Fleck(screenplay by)",
+        "Geneva Robertson-Dworet(screenplay by)"
+      ]
+    },
+    {
+      "name": "Stars",
+      "value": [
+        "Brie Larson",
+        "Samuel L. Jackson",
+        "Ben Mendelsohn"
+      ]
+    }
+  ]
+}
