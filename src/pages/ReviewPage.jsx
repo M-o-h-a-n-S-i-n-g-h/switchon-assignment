@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { filterReviewById } from '../redux/filterReviewSlice.js';
 
 const filters = ['helpfulness', 'votes', 'rating', 'dates']
@@ -8,15 +9,15 @@ const sortOrders = ['asc', 'desc']
 
 const ReviewPage = () => {
   const dispatch = useDispatch()
-  const { reviews } = useSelector(state => state.filterReview)
+  const { reviews, loading } = useSelector(state => state.filterReview)
   const { state: reviewId } = useLocation()
   
   const [filter, setFilter] = useState('helpfulness')
   const [sortOrder, setSortOrder] = useState('asc')
   
   useEffect(() => {
-    dispatch(filterReviewById(reviewId, filter, sortOrder))
-  }, [filter, sortOrder])
+    dispatch(filterReviewById({ reviewId, filter, sortOrder }))
+  }, [filter, sortOrder, dispatch])
   
   const handleFilters = (event) => {
     setFilter(event.target.value)
@@ -44,8 +45,15 @@ const ReviewPage = () => {
             </option>
           ))}
         </select>
-        {/* Displaying the filtered and sorted Reviews here */}
       </div>
+      {/* Displaying the filtered and sorted Reviews here */}
+      {loading ? <h2>Loading...</h2> : null}
+      {reviews?.map((review) => (
+        <div key={review.id}>
+          <h2>{review.author}</h2>
+          <p>{review.content}</p>
+        </div>
+      ))}
     </div>
   )
 }

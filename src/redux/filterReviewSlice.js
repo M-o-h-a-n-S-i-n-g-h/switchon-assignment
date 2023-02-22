@@ -5,7 +5,7 @@ const initialState = {
   reviews: []
 }
 
-const filterReviewsAsync = async (reviewId, filter, sortOrder) => {
+const filterReviews = async ({ reviewId, filter, sortOrder }) => {
   const url = new URL(`https://imdb-api.tprojects.workers.dev/reviews/${reviewId}`)
   url.searchParams.append("option", filter)
   url.searchParams.append("sortOrder", sortOrder)
@@ -13,7 +13,7 @@ const filterReviewsAsync = async (reviewId, filter, sortOrder) => {
   return await response.json();
 }
 
-const filterReviewById = createAsyncThunk("filter/filterReviewById", filterReviewsAsync)
+const filterReviewById = createAsyncThunk("filter/filterReviewById", filterReviews)
 
 const filterReviewSlice = createSlice({
   name: "filterReview",
@@ -24,7 +24,7 @@ const filterReviewSlice = createSlice({
     },
     [filterReviewById.fulfilled]: (state, action) => {
       state.loading = false
-      state.reviews = action.payload.reviews
+      state.reviews = action.payload?.reviews
     },
     [filterReviewById.rejected]: (state, _) => {
       state.loading = false
